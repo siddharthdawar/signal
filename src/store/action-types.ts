@@ -1,0 +1,3 @@
+export const actionTypes = {
+    UPDATE_DIRECTIONAL_STATEMENTS: 'UPDATE_DIRECTIONAL_STATEMENTS'
+};
