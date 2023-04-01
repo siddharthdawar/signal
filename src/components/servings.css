@@ -1,0 +1,17 @@
+.servings {
+    display: flex;
+    flex-direction: column;
+}
+
+.serving-items {
+    display: flex;
+    flex-direction: row;
+}
+
+.serving-item {
+    flex-grow: 1;
+}
+
+.first-group {
+    padding-bottom: 30px;
+}

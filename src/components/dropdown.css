@@ -1,0 +1,13 @@
+.dropdown {
+    align-items: center;
+    display: flex;
+}
+
+.label {
+    padding-right: 5px;
+}
+
+.select {
+    height: 30px;
+    min-width: 150px;
+}
