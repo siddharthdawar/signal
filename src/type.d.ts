@@ -40,13 +40,13 @@ type DataToDisplay = {
 };
 
 type State = {
-    age: string | undefined;
+    age: string;
     ageOptions: string[];
     dataToDisplay: DataToDisplay | undefined;
     directionalStatements: DirectionalStatement[];
     foodGroups: FoodGroup[];
     foods: Foods;
-    gender: string | undefined;
+    gender: string;
     genderOptions: string[];
     servingsPerDay: ServingPerDay[];
 };
