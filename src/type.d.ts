@@ -39,14 +39,24 @@ type DataToDisplay = {
     servings: ServingPerDay[];
 };
 
+type Individual = {
+    age: string;
+    dataToDisplay: DataToDisplay | undefined;
+    gender: string;
+    id: string;
+    name: string;
+};
+
 type State = {
     age: string;
     ageOptions: string[];
     dataToDisplay: DataToDisplay | undefined;
     directionalStatements: DirectionalStatement[];
+    family: Individual[];
     foodGroups: FoodGroup[];
     foods: Foods;
     gender: string;
     genderOptions: string[];
     servingsPerDay: ServingPerDay[];
+    userType: string;
 };

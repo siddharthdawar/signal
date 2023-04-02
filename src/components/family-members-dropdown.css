@@ -1,0 +1,14 @@
+.family-member-dropdown {
+    align-items: center;
+    display: flex;
+    padding-top: 20px;
+}
+
+.label {
+    padding-right: 5px;
+}
+
+.family-select {
+    height: 30px;
+    min-width: 200px;
+}

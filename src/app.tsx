@@ -4,18 +4,17 @@ import './app.css';
 import {
     getDirectionalStatements,
     getFoodGroups, getFoods,
-    getServingsPerDay, updateAge,
-    updateGender
+    getServingsPerDay,
+    updateUserType
 } from './store/action-creators';
 import {Dropdown} from './components/dropdown';
-import {Servings} from './components/servings';
+import {userTypeOptions} from './utils';
+import {Individual} from './components/individual';
+import {Family} from './components/family';
 
 export const App = () => {
     const dispatch = useDispatch();
-    const ageOptions = useSelector((state: State) => state.ageOptions);
-    const age = useSelector((state: State) => state.age);
-    const genderOptions = useSelector((state: State) => state.genderOptions);
-    const gender = useSelector((state: State) => state.gender);
+    const userType = useSelector((state: State) => state.userType);
 
     useEffect(() => {
         getDirectionalStatements()(dispatch);
@@ -26,30 +25,19 @@ export const App = () => {
 
     return (
         <div className="app">
-            <header className="header">Food Guide</header>
-            <p>Select your gender and age below to see healthy menu options and suggested serving sizes:</p>
-            <div className='dropdowns'>
-                <Dropdown
-                    className='gender-dropdown'
-                    label="Gender"
-                    onChange={(gender) => {
-                        dispatch(updateGender(gender));
-                        dispatch(updateAge('placeholder'))
-                    }}
-                    options={genderOptions}
-                    value={gender}
-                />
-                <Dropdown
-                    disabled={gender === 'placeholder'}
-                    label="Age"
-                    onChange={(age) => {
-                        dispatch(updateAge(age))
-                    }}
-                    options={ageOptions}
-                    value={age}
-                />
-            </div>
-            {age !== 'placeholder' && <Servings/>}
+            <header className="header">Food Guide: Get started by selecting whether to get suggestions for you or for
+                your family
+            </header>
+            <Dropdown
+                label="Food Guide for"
+                onChange={(userType) => {
+                    dispatch(updateUserType(userType));
+                }}
+                options={userTypeOptions}
+                value={userType}
+            />
+            {userType === 'Individual' && <Individual/>}
+            {userType === 'Family' && <Family/>}
         </div>
     );
 }

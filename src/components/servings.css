@@ -4,12 +4,8 @@
 }
 
 .serving-items {
-    display: flex;
-    flex-direction: row;
-}
-
-.serving-item {
-    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .first-group {

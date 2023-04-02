@@ -67,3 +67,20 @@ export const updateAge = (age: string) => ({
     age,
     type: actionTypes.UPDATE_AGE
 });
+
+export const updateUserType = (userType: string) => ({
+    userType,
+    type: actionTypes.UPDATE_USER_TYPE
+});
+
+export const addMember = (age: string, gender: string, name: string) => ({
+    age,
+    gender,
+    name,
+    type: actionTypes.ADD_FAMILY_MEMBER
+});
+
+export const removeMember = (id: string) => ({
+    id,
+    type: actionTypes.REMOVE_FAMILY_MEMBER
+});

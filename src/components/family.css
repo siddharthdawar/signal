@@ -1,0 +1,29 @@
+.dropdowns {
+    display: flex;
+}
+
+.age-dropdown,
+.gender-dropdown {
+    padding-right: 25px;
+}
+
+.name-input {
+    margin-right: 30px;
+    padding: 6px;
+}
+
+.input {
+    align-items: center;
+    display: flex;
+}
+
+.family-member-details {
+    align-items: center;
+    display: flex;
+    padding-top: 25px;
+}
+
+.remove-member-button {
+    margin-left: 25px;
+    padding: 6px;
+}

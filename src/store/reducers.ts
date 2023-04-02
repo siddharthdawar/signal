@@ -6,6 +6,7 @@ const initialState = {
     ageOptions: [],
     dataToDisplay: undefined,
     directionalStatements: [],
+    family: [],
     foodGroups: [],
     foods: {
         gr: [],
@@ -15,7 +16,8 @@ const initialState = {
     },
     gender: 'placeholder',
     genderOptions: [],
-    servingsPerDay: []
+    servingsPerDay: [],
+    userType: 'placeholder'
 };
 
 const reducer = (state: State = initialState, action: any) => {
@@ -61,6 +63,41 @@ const reducer = (state: State = initialState, action: any) => {
                 dataToDisplay: {
                     servings
                 }
+            }
+        case actionTypes.UPDATE_USER_TYPE:
+            return {
+                ...state,
+                age: 'placeholder',
+                userType: action.userType,
+                dataToDisplay: undefined,
+                family: [],
+                gender: 'placeholder'
+            }
+        case actionTypes.ADD_FAMILY_MEMBER:
+            const memberServings = state.servingsPerDay.filter((item) =>
+                item.gender === action.gender && item.ages === action.age
+            );
+
+            const newFamilyMember = {
+                age: action.age,
+                dataToDisplay: {
+                    servings: memberServings
+                },
+                gender: action.gender,
+                id: `${Date.now()}`,
+                name: action.name
+            }
+
+            return {
+                ...state,
+                family: [...state.family, newFamilyMember]
+            }
+        case actionTypes.REMOVE_FAMILY_MEMBER:
+            const newFamilyArray = state.family.filter((item) => item.id !== action.id);
+
+            return {
+                ...state,
+                family: [...newFamilyArray]
             }
     }
 

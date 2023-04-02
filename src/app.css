@@ -9,12 +9,5 @@
 .header {
     font-size: xx-large;
     font-weight: bolder;
-}
-
-.dropdowns {
-    display: flex;
-}
-
-.gender-dropdown {
-    padding-right: 30px;
+    padding-bottom: 15px;
 }

@@ -11,7 +11,7 @@ type ServingsItemProps = {
 };
 
 export const ServingsItem: React.FC<ServingsItemProps> = (props) => (
-    <div>
+    <div className='servings-item'>
         <StatementList heading={props.heading} list={props.list}/>
         {props.servings.filter((item) => item.fgid === props.fgid).map((item, index: number) => (
             <div className='daily-servings' key={index}>Daily servings - {item.servings}</div>

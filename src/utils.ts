@@ -24,3 +24,5 @@ export const getDropdownOptions = (items: ServingPerDay[]) => {
         genderOptions: Array.from(new Set(tempGendersArray))
     });
 };
+
+export const userTypeOptions = ['Individual', 'Family'];
